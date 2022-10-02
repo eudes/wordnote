@@ -43,19 +43,9 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      # - name: 🚀 Publish app
-      #   run: expo publish --non-interactive
-      #   env:
-      #     EXPO_OWNER: ${{ secrets.EXPO_OWNER }}
-      #     EXPO_SLUG: ${{ secrets.EXPO_SLUG }}
       - name: 🚀 Publish app
-        run: expo run:android
+        run: npx expo build --non-interactive
         env:
           EXPO_OWNER: ${{ secrets.EXPO_OWNER }}
           EXPO_SLUG: ${{ secrets.EXPO_SLUG }}
-        
-      - name: Upload Android
-        uses: actions/upload-artifact@v2
-        with:
-          name: wordnote.apk
-          path: dist/*.apk
+      
