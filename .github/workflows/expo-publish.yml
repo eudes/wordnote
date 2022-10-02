@@ -44,7 +44,7 @@ jobs:
         run: yarn install
 
       - name: 🚀 Publish app
-        run: npx expo publish --non-interactive
+        run: expo publish --non-interactive
         env:
           EXPO_OWNER: ${{ secrets.EXPO_OWNER }}
           EXPO_SLUG: ${{ secrets.EXPO_SLUG }}
